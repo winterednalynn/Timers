@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <p id="textChanger"></p>
+
+  
+
+    <script>
+    
+       const pId = document.getElementById('textChanger');
+
+        // Define your desired styles
+        const fonts = ['Georgia', 'Brush Script MT', 'Arial', 'Garamond', 'Times New Roman']; // Using a collection of fonts to prompt, found font names on w3school 
+        const bkgrndCol = ['lightblue', 'pink', 'white', 'lavender', 'grey']; // Using numerous color options for background 
+        const txtfontcol = ['red', 'green', 'blue', 'purple', 'orange']; // Placing different font colors 
+
+// Function to change styles with timeout
+    function changeStyle(index) {
+    pId.style.fontFamily = fonts[index]; // Prompts font variable array 
+    pId.style.backgroundColor = bkgrndCol[index]; // prompts backgroundColors array 
+    pId.style.color = txtfontcol[index]; // prompts textColor array 
+  
+
+
+    // SET TIME OUT IS A FUNCITON That allows be excuted by a specific delayed. 
+
+  const tiktok = (index + 1) * 1000; // setting timer w/ delay - 1 second added each time. 
+  setTimeout(() => changeStyle((index + 1) % fonts.length), tiktok);
+}
+
+   
+    setTimeout(() => changeStyle(0), 3000);  // 3000 milliseconds = 3 second delayed. 
+
+    // Set some initial text content
+    pId.textContent = "**Life is beautiful**"; // displayed text that will transition in style 
+    
+    </script>
+
+</body>
+</html>
